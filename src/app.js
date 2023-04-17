@@ -1,8 +1,8 @@
-var a = 1;
-var b = 2;
-
-function adderFunction(a, b) {
-    return a + b;
+var x = 1
+var y = 2
+var z = "Test Project"
+function adder(x, y) {
+    return x + y
 }
 
-console.log(adderFunction(a, b));
+console.log(adder(1, 2))
