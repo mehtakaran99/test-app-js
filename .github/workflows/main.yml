@@ -1,0 +1,17 @@
+name: Call GitHobbit
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  call-workflow-passing-data:
+    uses: mehtakaran9/githobbit/.github/workflows/actions.yml@main
+    with:
+      owner: mehtakaran9
+      repository: test-app-js
+      branch: main
+      target-branch: typescript
+      file-mode: false
+    secrets: inherit
