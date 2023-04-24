@@ -12,8 +12,8 @@ jobs:
       - name: Forking the repo
         run: gh repo fork mehtakaran9/test-app-js --fork-name test-app-fork --clone --remote
         env:
-          GH_TOKEN: $$ {{ secrets.access-token }}
-          GITHUB_TOKEN: ${{ secrets.access-token }}
+          GH_TOKEN: $$ {{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   call-workflow:
     uses: mehtakaran9/githobbit/.github/workflows/actions.yml@main
     with:
@@ -23,4 +23,4 @@ jobs:
       target-branch: typescript
       file-mode: false
     secrets:
-      token: ${{ secrets.access-token }}
+      token: ${{ secrets.ACCESS_TOKEN }}
