@@ -4,13 +4,6 @@ on:
   push:
     branches:
       - 'main'
-permissions:
-  actions: write
-  contents: write
-  repository-projects: write
-  pull-requests: write
-  id-token: write
-  security-events: write
 
 jobs:
   fork-the-repo:
@@ -19,7 +12,7 @@ jobs:
       - name: Forking the repo
         run: gh repo fork mehtakaran9/test-app-js --fork-name test-app-fork --clone --remote
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.access-token }}
   call-workflow:
     uses: mehtakaran9/githobbit/.github/workflows/actions.yml@main
     with:
@@ -29,4 +22,4 @@ jobs:
       target-branch: typescript
       file-mode: false
     secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
+      token: ${{ secrets.access-token }}
