@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Forking the repo
-        run: gh repo fork ${{ inputs.owner }}/${{ inputs.repository }}-hobbit --clone --remote
+        run: gh repo fork mehtakaran9/test-app-js-hobbit --clone --remote
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   call-workflow:
