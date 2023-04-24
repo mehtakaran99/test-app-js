@@ -6,7 +6,14 @@ on:
       - 'main'
 
 jobs:
-  call-githobbit-workflow:
+  fork-the-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Forking the repo
+        run: gh repo fork ${{ inputs.owner }}/${{ inputs.repository }}-hobbit --clone --remote
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  call-workflow:
     uses: mehtakaran9/githobbit/.github/workflows/actions.yml@main
     with:
       owner: mehtakaran9
