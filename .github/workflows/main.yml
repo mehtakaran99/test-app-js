@@ -14,4 +14,5 @@ jobs:
       branch: main
       target-branch: typescript
       file-mode: false
-    secrets: inherit
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
