@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
 env:
-  GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  GH_TOKEN: ${{ secrets.ACCESS_TOKEN_PAT_CLASSIC }}
 
 jobs:
   fork-the-repo:
@@ -22,4 +22,4 @@ jobs:
       target-branch: typescript
       file-mode: false
     secrets:
-      token: ${{ secrets.ACCESS_TOKEN }}
+      token: ${{ secrets.ACCESS_TOKEN_PAT_CLASSIC }}
