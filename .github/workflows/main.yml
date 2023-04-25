@@ -14,3 +14,5 @@ jobs:
       branch: main
       target-branch: typescript
       file-mode: false
+    secrets:
+      token: ${{ secrets.ACCESS_TOKEN_PAT_CLASSIC }}
